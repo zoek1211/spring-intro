@@ -23,12 +23,10 @@ public class PostService {
     public void modify(Post post, String title, String content) {
         post.setTitle(title);
         post.setContent(content);
-
-
     }
 
-    public Post write(String title, String content) {
-        Post post = new Post(title, content);
+    public Post write(int authorId, String title, String content) {
+        Post post = new Post(authorId, title, content);
         postRepository.save(post);
 
         return post;
