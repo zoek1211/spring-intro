@@ -145,3 +145,21 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/zoekim/Id
 	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
 	... 21 more
+2026-11-03 01:36:40.549789Z jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FLYWAY_SCHEMA_HISTORY" not found; SQL statement:
+SELECT concat(script, '_', success) FROM flyway_schema_history; [42102-232]
+2026-11-03 01:36:40.549768Z jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DATABASECHANGELOG" not found; SQL statement:
+SELECT id, filename, exectype FROM DATABASECHANGELOG; [42102-232]
+2026-11-03 01:36:40.549760Z jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FLYWAY_SCHEMA_HISTORY" not found; SQL statement:
+SELECT concat(script, '_', success) FROM flyway_schema_history; [42102-232]
+2026-11-03 01:37:53.366307Z jdbc[8]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FLYWAY_SCHEMA_HISTORY" not found; SQL statement:
+SELECT concat(script, '_', success) FROM flyway_schema_history; [42102-232]
+2026-11-03 01:37:53.366288Z jdbc[7]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DATABASECHANGELOG" not found; SQL statement:
+SELECT id, filename, exectype FROM DATABASECHANGELOG; [42102-232]
+2026-11-03 01:37:53.366287Z jdbc[9]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FLYWAY_SCHEMA_HISTORY" not found; SQL statement:
+SELECT concat(script, '_', success) FROM flyway_schema_history; [42102-232]
