@@ -1,5 +1,7 @@
 package com.back.domain.post.post.repository;
 
+import com.back.domain.member.member.entity.Member;
+import com.back.domain.member.member.repository.MemberRepository;
 import com.back.domain.post.post.entity.Post;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.DisplayName;
@@ -17,6 +19,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Rollback // 테스트 환경에서는 Transactional 자동으로 롤백됨. db에 영향을 주지 않음.
 public class PostRepositoryTest {
     @Autowired
+    private MemberRepository memberRepository;
+    @Autowired
     private PostRepository postRepository;
 
     @Test
@@ -31,7 +35,8 @@ public class PostRepositoryTest {
     @Test
     @DisplayName("글 생성")
     void t2() {
-        Post post = new Post(1, "제목 new", "내용 new");
+        Member memberUser1 = memberRepository.findById(3).get();
+        Post post = new Post(memberUser1, "제목 new", "내용 new");
         assertThat(post.getId()).isEqualTo(0);
 
         postRepository.save(post);
